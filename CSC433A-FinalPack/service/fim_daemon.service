@@ -1,0 +1,13 @@
+[Unit]
+Description=Python File Integrity Monitoring Daemon (Option A)
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 -m fim_daemon.main
+WorkingDirectory=/opt/cyber-defense-suite-optionA
+Restart=always
+User=root
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
